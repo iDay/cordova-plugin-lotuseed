@@ -4,6 +4,13 @@
 
 var LotuseedPlugin = {
 
+	// 触发自定义事件
+    // eventId:    自定义事件的 eventId
+    // eventLabel: 自定义事件的事件标签
+    onEvent:function(eventId) {
+        cordova.exec(null, null, "LotuseedAgent", "onEvent", [eventId]);
+    },	
+    
     // 触发自定义事件
     // eventId:    自定义事件的 eventId
     // eventLabel: 自定义事件的事件标签

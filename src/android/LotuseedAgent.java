@@ -44,7 +44,11 @@ public class LotuseedAgent extends CordovaPlugin {
 	
 	@Override
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-		if (action.equals("onEventWithLabel")) {
+		if (action.equals("onEvent")) {
+			String eventId = args.getString(0);
+			Lotuseed.onEvent(eventId);
+			return true;
+		} else if (action.equals("onEventWithLabel")) {
     		// 触发带事件标签的自定义事件
 			String eventId = args.getString(0);
 			String eventLabel = args.getString(1);
@@ -104,7 +108,10 @@ public class LotuseedAgent extends CordovaPlugin {
 			String amount = args.getString(2);
 			Lotuseed.onOrder(accountId, orderId, Double.parseDouble(amount));
 			return true;
-		} 
+		} else if (action.equals("startWithAppKey")) {
+			String appkey = args.getString(0);
+			Lotuseed.startWithAppKey(appkey);
+		}
 		return false;
 	}
 	

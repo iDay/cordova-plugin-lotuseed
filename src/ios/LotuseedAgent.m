@@ -41,6 +41,22 @@
     return nil;
 }
 
+- (void)startWithAppKey:(CDVInvokedUrlCommand*)command {
+    NSString *appkey = [command.arguments objectAtIndex:0];
+    if (appkey == nil || [appkey isKindOfClass:[NSNull class]]) {
+        return;
+    }
+    [Lotuseed startWithAppKey:appkey];
+}
+
+- (void)onEvent:(CDVInvokedUrlCommand*)command {
+    NSString *eventId = [command.arguments objectAtIndex:0];
+    if (eventId == nil || [eventId isKindOfClass:[NSNull class]]) {
+        return;
+    }
+    [Lotuseed onEvent:eventId];
+}
+
 - (void)onEventWithLabel:(CDVInvokedUrlCommand*)command {
     NSString *eventId = [command.arguments objectAtIndex:0];
     if (eventId == nil || [eventId isKindOfClass:[NSNull class]]) {

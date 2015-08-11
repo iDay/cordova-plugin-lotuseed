@@ -12,6 +12,11 @@
 
 @interface LotuseedAgent : CDVPlugin
 
+// 初始化appkey
+// command 中的值：
+// eventId   : 自定义事件的 appkey
+- (void)startWithAppKey:(CDVInvokedUrlCommand*)command;
+
 // 触发自定义事件
 // command 中的值：
 // eventId   : 自定义事件的 eventId
