@@ -28,6 +28,7 @@ public class LotuseedAgent extends CordovaPlugin {
 		super.initialize(cordova, webView);
 		this.act = cordova.getActivity();
 		this.ctx = cordova.getActivity().getApplicationContext();
+		Lotuseed.init(this.ctx);
 	}
 	
 	@Override

@@ -24,6 +24,7 @@
         <framework src="SystemConfiguration.framework" />
         <framework src="Security.framework" />
         <framework src="CoreTelephony.framework" />
+        <framework src="CoreLocation.framework" />
         <framework src="libz.dylib" />
         
     </platform>
