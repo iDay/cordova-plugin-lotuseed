@@ -31,6 +31,13 @@
 // 触发自定义事件
 // command 中的值：
 // eventId:    自定义事件的 eventId
+// eventLabel: 自定义事件的事件标签
+// eventDuration: 自定义事件的调用时长
+- (void)onEventDuration:(CDVInvokedUrlCommand*)command;
+
+// 触发自定义事件
+// command 中的值：
+// eventId:    自定义事件的 eventId
 // eventParams : 自定义事件的KV数据，Json 对象格式
 - (void)onEventWithParams:(CDVInvokedUrlCommand*)command;
 

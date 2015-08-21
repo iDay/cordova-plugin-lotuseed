@@ -55,6 +55,13 @@ public class LotuseedAgent extends CordovaPlugin {
 			String eventLabel = args.getString(1);
 			Lotuseed.onEvent(eventId, eventLabel);
 			return true;
+		} else if (action.equals("onEventDuration")) {
+    		// 触发带多事件属性的自定义事件
+			String eventId = args.getString(0);
+			String eventLabel = args.getString(1);
+			long eventDuration = args.getLong(2);
+			Lotuseed.onEventDuration(eventId, eventLabel, eventDuration);
+			return true;
 		} else if (action.equals("onEventWithParams")) {
     		// 触发带多事件属性的自定义事件
 			String eventId = args.getString(0);

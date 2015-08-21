@@ -69,6 +69,22 @@
     [Lotuseed onEvent:eventId label:eventLabel];
 }
 
+- (void)onEventDuration:(CDVInvokedUrlCommand*)command {
+    NSString *eventId = [command.arguments objectAtIndex:0];
+    if (eventId == nil || [eventId isKindOfClass:[NSNull class]]) {
+        return;
+    }
+    NSString *eventLabel = [command.arguments objectAtIndex:1];
+    if ([eventLabel isKindOfClass:[NSNull class]]) {
+        eventLabel = nil;
+    }
+    NSNumber *duration = [command.arguments objectAtIndex:2];
+    if ([duration isKindOfClass:[NSNull class]]) {
+        duration = [NSNumber numberWithLong:0];
+    }
+    [Lotuseed onEvent:eventId label:eventLabel withDuration:[duration longValue]];
+}
+
 - (void)onEventWithParams:(CDVInvokedUrlCommand*)command {
     NSString *eventId = [command.arguments objectAtIndex:0];
     if (eventId == nil || [eventId isKindOfClass:[NSNull class]]) {

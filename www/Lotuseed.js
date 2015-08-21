@@ -31,6 +31,14 @@ var LotuseedPlugin = {
         var eventDataJson = JSON.stringify(eventDict);
         cordova.exec(null, null, "Lotuseed", "onEventWithParams", [eventId, eventDataJson]);
     },
+    
+    // 触发自定义事件
+    // eventId:    自定义事件的 eventId
+    // eventLabel: 自定义事件的事件标签
+    // eventDuration : 自定义事件的调用时长
+    onEventDuration:function(eventId, eventLabel, eventDuration) {
+        cordova.exec(null, null, "Lotuseed", "onEventDuration", [eventId, eventLabel, eventDuration]);
+    },
 
     // 触发页面事件，在页面加载完毕的时候调用，记录页面名称和使用时长，一个页面调用这个接口后就不用再调用 onPageViewBegin 和 onPageViewEnd 接口了
     // pageName  : 页面自定义名称
