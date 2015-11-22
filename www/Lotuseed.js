@@ -7,7 +7,7 @@ var LotuseedPlugin = {
 	// 初始化appkey
     // appkey:    应用的 appkey
 	startWithAppKey:function(appkey) {
-        cordova.exec(null, null, "Lotuseed", "startWithAppKey", [appkey]);
+        cordova.exec(null, null, "Lotuseed", "startWithAppKey", [appkey, channel]);
     },
     
 	// 触发自定义事件

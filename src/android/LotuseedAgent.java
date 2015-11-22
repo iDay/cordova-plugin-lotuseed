@@ -118,7 +118,12 @@ public class LotuseedAgent extends CordovaPlugin {
 			return true;
 		} else if (action.equals("startWithAppKey")) {
 			String appkey = args.getString(0);
-			Lotuseed.startWithAppKey(appkey);
+			String channel = args.getString(1);
+			if (channel != null) {
+				Lotuseed.startWithAppKey(appkey, channel);
+			} else {
+				Lotuseed.startWithAppKey(appkey);
+			}
 		}
 		return false;
 	}
